@@ -136,7 +136,7 @@ Create an `add-game.php` that uses an input form to capture new data
   <label for="year">year</label>
   <input type="text" name="year">
   <label for="genre">genre</label>
-  <input type="text" name="genre">
+  <input type="text" name="genre"> <!-- refactor to use dropdown with options: 'puzzle' 'trivia'-->
   <label for="url">url</label>
   <input type="text" name="url">
   <button>Submit</button>
@@ -304,6 +304,11 @@ function db_connect() {
   $conn = new PDO('mysql:host=' . DB_SERVER . ';dbname=' . DB_NAME, DB_USERNAME, DB_PASSWORD)
 }
 ```
+
+# Exercise
+
+- Implement a dynamic dropdown menu by first creating a new database table that will store the genres
+- Edit your form page so that the dropdown menu no longer is hard-coded with HTML but rather will use PHP to fetch from your new table dynamically. 
 
 ---
 layout: image-right
