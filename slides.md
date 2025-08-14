@@ -262,7 +262,7 @@ transition: slide-left
 ---
 
 # Exercise
-Create a function to refactor our database connection
+Create a function to refactor our database connections
 
 - Refactor our database connection so we can use it more elegantly like:
 `$conn = db_connect()`
@@ -284,17 +284,24 @@ function db_disconnect($conn) {
 ```
 
 ---
+transition: slide-left
+---
+
+# Exer
+
+---
 layout: image-right
 transition: slide-left
-image: /assets/addy.png
-backgroundSize: 400px 300px
+image: /assets/jeff.png
+backgroundSize: 400px 370px
 class: text-left
 ---
 
 # 10 minute break
 
 🍦 Cool Tips, Trends and Resources:
-- 👩‍💻 [NeetCode](https://www.freecodecamp.org/news/prepare-for-technical-interviews-using-neetcode-150)
+- 🧵 [Intro to SVG](https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/)
+- 🏰 [Laracasts](https://laracasts.com/)
 
 <br>
 <hr>
