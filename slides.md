@@ -71,7 +71,30 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Crea
+# Extract form values from GET vs POST requests
+
+- create login.php
+```html
+<fosrm action="validate.php">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <button>Submit</button>
+</form>
+```
+- create validate.php
+```php
+<?php
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+echo $username;
+echo $password;
+
+?>
+```
+
+- try the above using a GET request, then a `method="POST"` request
 
 ---
 layout: image-right
