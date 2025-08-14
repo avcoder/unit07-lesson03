@@ -36,11 +36,42 @@ Unit 07 - Lesson 03
 transition: slide-left
 ---
 
-# lorem
+# Create first PHP page
+
+- Start PHP and mySQL server in XAMPP
+- In windows: `C:/XAMPP/htdocs/`
+- In MAC: Finder > search XAMPP > most likely in `/Applications/XAMPP/htdocs/`
+
+## Exercise
+- create `/unit07/index.php`
+```php
+<?php echo "Hello world" ?>
+```
+- goto localhost/unit07/index.php
+- What happens if you didn't specify `index.php`?
 
 ---
 transition: slide-left
 ---
+
+# Connect to DB locally
+
+- create `/unit07/db.php`
+```php
+<?php
+  $conn = new PDO('mysql:host=localhost;dbname=games', 'root', '');
+  echo 'connected to db';
+?>
+```
+
+
+
+
+---
+transition: slide-left
+---
+
+# Crea
 
 ---
 layout: image-right
