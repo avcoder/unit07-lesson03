@@ -227,6 +227,15 @@ $conn = null;
 transition: slide-left
 ---
 
+# Exercise
+
+- Create table that displays all data (all 4 columns)
+- Create additional Columns for 'Edit', 'Delete'
+
+---
+transition: slide-left
+---
+
 # Functions
 
 - create db-queries.php, then move below function into it
