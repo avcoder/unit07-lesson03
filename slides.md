@@ -224,6 +224,57 @@ $conn = null;
 - ChatGPT: Refactor this PHP code to output JSON to make an API endpoint and avoid CORS errors?
 
 ---
+transition: slide-left
+---
+
+# Functions
+
+- create db-queries.php, then move below function into it
+```php
+function db_queryAll($sql, $conn) {
+  $cmd = $conn -> prepare($sql);
+  $cmd -> execute();
+  $games = $cmd -> fetchAll();
+
+  return $games;
+}
+```
+- can now do this:
+```php
+require_once 'db-queries.php';
+...
+$sql = "SELECT * FROM games";
+// now can do this
+$games = db_queryAll($sql, $conn);
+```
+
+---
+transition: slide-left
+---
+
+# Exercise
+Create a function to refactor our database connection
+
+- Refactor our database connection so we can use it more elegantly like:
+`$conn = db_connect()`
+```php
+// delete require 'db.php';
+// in db-queries.php create below function
+function db_connect() {
+  $conn = new PDO(....)
+  return $conn;
+}
+```
+- Refactor our disconnect to be inside footer.php via a function you should create called `db_disconnect()`
+```php
+function db_disconnect($conn) {
+  if (isset($conn)) {
+    $conn = null;
+  }
+}
+```
+
+---
 layout: image-right
 transition: slide-left
 image: /assets/addy.png
