@@ -287,7 +287,23 @@ function db_disconnect($conn) {
 transition: slide-left
 ---
 
-# Exer
+# Define Constants
+
+- create db_cred.php
+```php
+define("DB_SERVER", "localhost");
+define("DB_NAME", "insert-db-name-here");
+define("DB_USERNAME", "root");
+define("DB_PASSWORD", "");
+```
+- which allows you to use it via:
+```php
+require_once 'db_cred.php';
+
+function db_connect() {
+  $conn = new PDO('mysql:host=' . DB_SERVER . ';dbname=' . DB_NAME, DB_USERNAME, DB_PASSWORD)
+}
+```
 
 ---
 layout: image-right
