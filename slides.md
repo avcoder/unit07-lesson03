@@ -191,7 +191,37 @@ echo "Game saved?";
 ?>
 ```
 
+---
+transition: slide-left
+---
 
+# Fetch data from mySQL and display table
+
+```php
+// connect to db
+require_once 'db.php';
+
+// build sql query
+$sql = "SELECT * FROM games"
+
+// run query and store results
+$cmd = $conn -> prepare($sql);
+$cmd -> execute();
+$games = $cmd->fetchAll(); 
+// Try: 1) echo $games 2) var_dump($games) 3) print_r($games)
+// 4) echo json_encode($games) 5) echo json_encode($games[2]) 6) echo json_encode($games[2]['title'])
+
+// show db results
+echo "<table>"
+foreach ($games as $game) {
+  echo "<tr><td>" . $game['title'] . "</td></tr>";
+}
+echo "</table>"
+
+// disconnect
+$conn = null;
+```
+- ChatGPT: Refactor this PHP code to output JSON to make an API endpoint and avoid CORS errors?
 
 ---
 layout: image-right
