@@ -19,8 +19,9 @@ mdc: true
 # Intro to Deployment
 Unit 07 - Lesson 03
 
-- [ ] Backend Deployment Overview
-- [ ] Deploying Node.js App on Render
+- [ ] PHP
+- [ ] Connect to DB
+- [ ] display table from mySQL 
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
