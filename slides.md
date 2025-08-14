@@ -126,8 +126,9 @@ transition: slide-left
 ---
 
 # Exercise (pg.2)
-Create an HTML input form to capture new data
+Create an `add-game.php` that uses an input form to capture new data
 
+- Tip: use ! in VS Code to scaffold an HTML page
 ```html
 <form action="" method="GET or POST?">
   <label for="title">title</label>
@@ -141,18 +142,32 @@ Create an HTML input form to capture new data
   <button>Submit</button>
 </form>
 ```
+- Optionally can add basic styles: https://watercss.kognise.dev/
 
 ---
 transition: slide-left
 ---
 
 # Exercise (pg.3)
+
+- Refactor header/footer into partials header.php and footer.php
+```php
+require_once 'components/header.php'; 
+// OR can also include_once 'components/header.php' but this won't error out if it doesn't exist
+```
+- Optionally: Create a homepage `home.php` that includes header.php and footer.php and some game image
+
+
+---
+transition: slide-left
+---
+
+# Exercise (pg.4)
 Create save-game.php
 
 ```php
 <?php
-// save all 4 form input into variables
-$title = 
+$title = // FILL-IN-THE-BLANK: save all 4 form input into variables
 $year = 
 $genre = 
 $url = 
@@ -176,10 +191,6 @@ echo "Game saved?";
 ?>
 ```
 
-- add values from our input form into SQL Command
-- execute insert
-- disconnect from db
-- display confirmation message
 
 
 ---
