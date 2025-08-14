@@ -305,6 +305,10 @@ function db_connect() {
 }
 ```
 
+---
+transition: slide-left
+---
+
 # Exercise
 
 - Implement a dynamic dropdown menu by first creating a new database table that will store the genres
