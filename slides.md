@@ -93,8 +93,94 @@ echo $password;
 
 ?>
 ```
-
 - try the above using a GET request, then a `method="POST"` request
+
+---
+transition: slide-left
+---
+
+# Exercise (pg.1)
+Create mySQL table to save games data 
+
+```sql
+USE INSERT_DB_NAME_HERE;
+
+DROP TABLE IF EXISTS games;
+
+CREATE TABLE IF NOT EXISTS games (
+  game_id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(50),
+  year INT,
+  genre VARCHAR(32),
+  url VARCHAR(100),
+  PRIMARY KEY (game_id));
+
+INSERT INTO games (title, year, genre, url) VALUES
+('Pacman',1983,'Puzzle','https://archive.org/details/PACMAN_CGA_2'),
+('Dig Dug', 1983, 'Puzzle', 'https://archive.org/details/DIGDUG_CGA'),
+('Jeopardy', 1991, 'Trivia', 'https://archive.org/details/jeopardy-25th-anniversary-edition');
+```
+
+---
+transition: slide-left
+---
+
+# Exercise (pg.2)
+Create an HTML input form to capture new data
+
+```html
+<form action="" method="GET or POST?">
+  <label for="title">title</label>
+  <input type="text" name="title">
+  <label for="year">year</label>
+  <input type="text" name="year">
+  <label for="genre">genre</label>
+  <input type="text" name="genre">
+  <label for="url">url</label>
+  <input type="text" name="url">
+  <button>Submit</button>
+</form>
+```
+
+---
+transition: slide-left
+---
+
+# Exercise (pg.3)
+Create save-game.php
+
+```php
+<?php
+// save all 4 form input into variables
+$title = 
+$year = 
+$genre = 
+$url = 
+
+require 'db.php'; // connect to DB
+
+// set up SQL INSERT command
+$sql = "INSERT INTO games (title, year, genre, url) VALUES (:title, :year, :genre, :url)";
+
+// create a command object and fill the parameters with the form values
+$cmd = $conn->prepare($sql);
+$cmd -> bindParam(':title', $title, PDO::PARAM_STR, 50);
+$cmd -> bindParam(':year', $title, PDO::PARAM_INT);
+$cmd -> bindParam(':genre', $title, PDO::PARAM_STR, 32);
+$cmd -> bindParam(':url', $title, PDO::PARAM_STR, 100);
+
+// execute the command, then disconnect db, then show msg
+$cmd -> execute();
+$conn = null;
+echo "Game saved?";
+?>
+```
+
+- add values from our input form into SQL Command
+- execute insert
+- disconnect from db
+- display confirmation message
+
 
 ---
 layout: image-right
